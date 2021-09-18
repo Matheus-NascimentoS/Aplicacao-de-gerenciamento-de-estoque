@@ -61,8 +61,8 @@
 										<th class="text-white">Descricao</th>
 										<th class="text-white">Preco</th>
 										<th class="text-white">Quantidade em estoque</th>
-										<th>Edit</th>
-										<th>Delete</th>
+										<th class="text-white">Editar</th>
+										<th class="text-white">Excluir</th>
 
 									</tr>
 
@@ -72,10 +72,24 @@
 
 									<tr th:each="game : ${games}">
 
-										<td class="text-white" th:text="${game.titulo}"></td>
-										<td class="text-white" th:text="${game.descricao}"></td>
-										<td class="text-white" th:text="${game.preco}"></td>
-										<td class="text-white" th:text="${game.quantidadeEstoque}"></td>
+										<td class="text-white" th:text="${game.titulo}">neymar</td>
+                                        <td class="text-white" th:text="${game.descricao}"></td>
+                                        <td class="text-white" th:text="${game.preco}"></td>
+                                        <td class="text-white" th:text="${game.quantidadeEstoque}"></td>
+
+                                        <td> 
+                                            
+                                            <a th:href="@{/Jogos/delete/{id}(id=${game.id})}"
+                                            class="text-white btn btn-outline-success">Editar</a>
+                                            
+                                        </td>
+
+                                        <td>
+
+                                            <a th:href="@{/Jogos/delete/{id}(id=${game.id})}"
+                                            class="text-white btn btn-outline-danger">Excluir</a>
+
+                                        </td>
 
 									</tr>
 

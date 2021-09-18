@@ -13,8 +13,10 @@ public class Game {
 
 	private String titulo;
 	private String descricao;
+	private String urlImagem;
 	private int quantidadeEstoque;
 	private double preco;
+	
 	
 	public Long getId() {
 	
@@ -52,6 +54,19 @@ public class Game {
 	
 	}
 	
+	
+	public String getUrlImagem() {
+	
+		return urlImagem;
+	
+	}
+
+	public void setUrlImagem(String urlImagem) {
+	
+		this.urlImagem = urlImagem;
+	
+	}
+
 	public int getQuantidadeEstoque() {
 	
 		return quantidadeEstoque;
