@@ -12,10 +12,22 @@ public class GameFormUpdate {
 	
 	public Game Update(Long id, GameRepository gameRepo) {
 		
-		Optional<Game> game = gameRepo.findById(id);
-		game.get().setPreco(this.preco);
-		game.get().setQuantidadeEstoque(this.quantidadeEstoque);
-		return game.get();
+		if(this.quantidadeEstoque < 0) {
+			
+			Optional<Game> game = gameRepo.findById(id);
+			game.get().setPreco(this.preco);
+			game.get().setQuantidadeEstoque(0);
+			return game.get();			
+			
+		}else {
+			
+			Optional<Game> game = gameRepo.findById(id);
+			game.get().setPreco(this.preco);
+			game.get().setQuantidadeEstoque(this.quantidadeEstoque);
+			return game.get();	
+			
+		}
+		
 	}
 	
 	public int getQuantidadeEstoque() {
