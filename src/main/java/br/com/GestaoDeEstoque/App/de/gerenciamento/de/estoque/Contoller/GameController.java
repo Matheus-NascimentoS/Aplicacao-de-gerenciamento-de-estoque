@@ -40,20 +40,14 @@ public class GameController {
 	@GetMapping("/Formulario/Novo")
 	public String Post() {
 		
-		return "NewGame";
+		return service.NewGameForm();
 		
 	}
 	
 	@PostMapping("/NovoJogo")
 	public String ViewNewGame(GameForm form, Model model) {
 		
-		Game game = form.Convert();
-		
-		repository.save(game);
-		
-		model.addAttribute("games", game);
-		
-		return "ViewNewGame";
+		return service.NewGameView(form, model);
 		
 		
 	}

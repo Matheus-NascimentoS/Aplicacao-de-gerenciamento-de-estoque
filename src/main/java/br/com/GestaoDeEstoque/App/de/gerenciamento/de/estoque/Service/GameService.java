@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Form.GameForm;
 import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Model.Game;
 import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Repository.GameRepository;
 
@@ -44,6 +45,24 @@ public class GameService {
 		model.addAttribute("games", repository.findAll());
 		
 		return "HomePage";
+		
+	}
+
+	public String NewGameForm() {
+		
+		return "NewGame";
+
+	}
+
+	public String NewGameView(GameForm form, Model model) {
+
+		Game game = form.Convert();
+		
+		repository.save(game);
+		
+		model.addAttribute("games", game);
+		
+		return "ViewNewGame";
 		
 	}
 	
