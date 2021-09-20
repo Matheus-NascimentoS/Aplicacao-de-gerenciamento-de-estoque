@@ -30,33 +30,32 @@
 				
 				<div class="card-body border-0">
 					
-					<form>
+					<form action="http://localhost:8080/Jogos/NovoJogo" method="POST">
 						
 						<div class="mb-3">
 							
-							<label for="exampleInputEmail1" class="form-label text-white mb-3">Nome do jogo</label>
+							<label for="titulo" class="form-label text-white mb-3">Nome do jogo</label>
 							<input class="form-control text-white border-0 " name="titulo" placeholder="Insira o nome do jogo" style="background-color: #000000">
 							
 						</div>
 					
 						<div class="mb-3">
 						
-							<label for="exampleInputPassword1" class="form-label text-white mb-3">Descrição</label>
+							<label for="descricao" class="form-label text-white mb-3">Descrição</label>
 							<input class="form-control text-white border-0 " name="descricao" placeholder="Insira a descrição do jogo" style="background-color: #000000">
 					
 						</div>
 			
 						<div class="mb-3">
 						
-							<label for="exampleInputPassword1" class="form-label text-white mb-3">Preço</label>
-                            
-                            <input class="form-control text-white border-0 " type="number" name="preco" placeholder="Insira o preço do jogo" style="background-color: #000000">
+							<label for="preco" class="form-label text-white mb-3">Preço</label>
+							<input type="number" class="form-control text-white border-0 " name="preco" placeholder="Insira o preço do jogo" style="background-color: #000000">
 
 						</div>
 
 						<div class="mb-3">
 						
-							<label for="exampleInputPassword1" class="form-label text-white mb-3">Quantidade em estoque</label>
+							<label for="quantidadeEstoque" class="form-label text-white mb-3">Quantidade em estoque</label>
 							<input class="form-control text-white border-0 " type="number" name="quantidadeEstoque" placeholder="Insira a quantidade de unidades que temos desse jogo " style="background-color: #000000">
 						
 						</div>

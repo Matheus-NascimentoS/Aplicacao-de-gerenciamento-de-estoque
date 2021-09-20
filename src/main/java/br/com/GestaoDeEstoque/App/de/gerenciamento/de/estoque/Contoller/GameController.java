@@ -5,8 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Form.GameForm;
+import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Model.Game;
 import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Repository.GameRepository;
 import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Service.GameService;
 
@@ -37,7 +40,21 @@ public class GameController {
 	@GetMapping("/Formulario/Novo")
 	public String Post() {
 		
-		return "newPage";
+		return "NewGame";
+		
+	}
+	
+	@PostMapping("/NovoJogo")
+	public String ViewNewGame(GameForm form, Model model) {
+		
+		Game game = form.Convert();
+		
+		repository.save(game);
+		
+		model.addAttribute("games", game);
+		
+		return "ViewNewGame";
+		
 		
 	}
 	

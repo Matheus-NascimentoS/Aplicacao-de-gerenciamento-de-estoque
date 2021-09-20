@@ -6,10 +6,10 @@ public class GameForm {
 	
 	private String titulo;
 	private String descricao;
-	private String quantidadeEstoque;
-	private String preco;
+	private int quantidadeEstoque;
+	private Double preco;
 	
-	public GameForm(String titulo, String descricao, String quantidadeEstoque, String preco) {
+	public GameForm(String titulo, String descricao, int quantidadeEstoque, Double preco) {
 		
 		this.titulo = titulo;
 		this.descricao = descricao;
@@ -42,25 +42,25 @@ public class GameForm {
 	
 	}
 
-	public String getQuantidadeEstoque() {
+	public int getQuantidadeEstoque() {
 	
 		return quantidadeEstoque;
 	
 	}
 
-	public void setQuantidadeEstoque(String quantidadeEstoque) {
+	public void setQuantidadeEstoque(int quantidadeEstoque) {
 	
 		this.quantidadeEstoque = quantidadeEstoque;
 	
 	}
 
-	public String getPreco() {
+	public Double getPreco() {
 	
 		return preco;
 	
 	}
 
-	public void setPreco(String preco) {
+	public void setPreco(Double preco) {
 	
 		this.preco = preco;
 	
@@ -68,7 +68,7 @@ public class GameForm {
 	
 	public Game Convert() {
 		
-		Game game = new Game(titulo, descricao, Integer.parseInt(quantidadeEstoque), Double.parseDouble(preco));
+		Game game = new Game(titulo, descricao, quantidadeEstoque, preco);
 		
 		return game;
 		

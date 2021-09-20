@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Gestao de estoque</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+		crossorigin="anonymous">
+	<link rel="stylesheet"
+		href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+		crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+</head>
+
+<body style="background-color: #121212;">
+
+	<header style="background-color: #563d7c;">
+	
+		<nav class="navbar navbar-expand d-flex justify-content-center mb-3">
+			
+			<div class="navbar-nav" style="width: 18rem;">
+				
+				<a class="nav-item nav-link text-secondary fs-3" href="http://localhost:8080/Jogos/Home">Todos</a>
+				<a class="nav-item nav-link text-secondary" href="http://localhost:8080/Jogos/Disponiveis">Disponiveis</a>
+				<a class="nav-item nav-link text-secondary" href="http://localhost:8080/Jogos/Formulario/Novo">Novo</a>
+				
+			</div>
+			
+		</nav>
+	
+	</header>
+
+	<div class="container my-2">
+
+		<div class="card" style="background-color: #282828;">
+
+			<div class="card-body">
+
+				<div th:switch="${games}" class="container my-5">
+
+					<div class="col-md-10">
+
+						<h2 class="text-white">Todos os jogos</h2>
+
+						<div th:case="*">
+
+							<table class="table table-striped table-responsive-md">
+
+								<thead>
+
+									<tr>
+
+										<th class="text-white">Nome do jogo</th>
+										<th class="text-white">Descricao</th>
+										<th class="text-white">Preco</th>
+										<th class="text-white">Quantidade em estoque</th>
+										<th class="text-white">Editar</th>
+										<th class="text-white">Excluir</th>
+
+									</tr>
+
+								</thead>
+
+								<tbody>
+
+									<tr th:each="game : ${games}">
+
+										<td class="text-white" th:text="${game.titulo}">neymar</td>
+                                        <td class="text-white" th:text="${game.descricao}"></td>
+                                        <td class="text-white" th:text="${game.preco}"></td>
+                                        <td class="text-white" th:text="${game.quantidadeEstoque}"></td>
+
+                                        <td> 
+                                            
+                                            <a th:href="@{/Jogos/delete/{id}(id=${game.id})}"
+                                            class="text-white btn btn-outline-success">Editar</a>
+                                            
+                                        </td>
+
+                                        <td>
+
+                                            <a th:href="@{/Jogos/delete/{id}(id=${game.id})}"
+                                            class="text-white btn btn-outline-danger">Excluir</a>
+
+                                        </td>
+
+									</tr>
+
+								</tbody>
+
+							</table>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
