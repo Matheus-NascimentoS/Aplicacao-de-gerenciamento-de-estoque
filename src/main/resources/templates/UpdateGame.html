@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Atualizar Jogo</title>
+
+</head>
+
+	<body style="background-color: #121212;">
+
+		<header style="background-color: #563d7c;">
+		
+			<nav class="navbar navbar-expand d-flex justify-content-center mb-3">
+				
+				<div class="navbar-nav" style="width: 18rem;">
+					
+					<a class="nav-item nav-link text-secondary" href="http://localhost:8080/Jogos/Home">Todos</a>
+					<a class="nav-item nav-link text-secondary" href="http://localhost:8080/Jogos/Disponiveis">Disponiveis</a>
+					<a class="nav-item nav-link text-secondary" href="http://localhost:8080/Jogos/Formulario/Novo">Novo</a>
+					
+				</div>
+				
+			</nav>
+		
+		</header>
+
+		<div class="container">
+			
+			<div class="card" style="background-color: #282828;">
+				
+				<div class="card-body border-0" th:each="game : ${games}">
+					
+					<form action="#" th:action="@{/Jogos/update/{id}(id=${game.id})}" th:object="${game}" method="POST">
+			
+						<div class="mb-3">
+						
+							<label for="preco" class="form-label text-white mb-3">Preço</label>
+							<input th:value="${game.preco}" type="number" class="form-control text-white border-0 " name="preco" placeholder="Insira o novo preço do jogo" style="background-color: #000000">
+
+						</div>
+
+						<div class="mb-3">
+						
+							<label for="quantidadeEstoque" class="form-label text-white mb-3">Quantidade em estoque</label>
+							<input th:value="${game.quantidadeEstoque}" class="form-control text-white border-0 " type="number" name="quantidadeEstoque" placeholder="Insira a nova quantidade de unidades que temos desse jogo " style="background-color: #000000">
+						
+						</div>
+
+						<button type="submit" class="text-white btn btn-outline-warning btn-lg">Atualizar</button>
+					
+					</form>
+
+				</div>
+				
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
