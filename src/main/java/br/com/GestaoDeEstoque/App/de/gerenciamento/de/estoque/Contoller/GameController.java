@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Form.GameForm;
 import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Form.GameFormUpdate;
-import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Model.Game;
 import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Repository.GameRepository;
 import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Service.GameService;
 
@@ -48,23 +47,14 @@ public class GameController {
 	@GetMapping("/Formulario/Editar/{id}")
 	public String Edit(@PathVariable("id") long id, Model model) {
 		
-		Game game = repository.findById(id)
-				.orElseThrow(() -> new IllegalArgumentException("Jogo invalido" + id));
-		model.addAttribute("games", game);
-		return "UpdateGame";
+		return service.Edit(id, model);
 		
 	}
 	
 	@PostMapping("/update/{id}")
 	public String Update(@PathVariable("id") long id, GameFormUpdate form, Model model) {
 		
-		Game game = form.Update(id, repository);
-		
-		repository.save(game);
-		
-		model.addAttribute("games", game);
-		
-		return "ViewNewGame";
+		return service.Update(id, form, model);
 		
 	}
 	
