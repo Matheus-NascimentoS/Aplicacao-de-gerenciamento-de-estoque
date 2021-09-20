@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Model.Game;
 import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Repository.GameRepository;
+import br.com.GestaoDeEstoque.App.de.gerenciamento.de.estoque.Service.GameService;
 
 @Controller
 @RequestMapping("Jogos")
@@ -17,26 +17,34 @@ public class GameController {
 	@Autowired
 	GameRepository repository;
 	
+	@Autowired
+	GameService service = new GameService(repository);
+	
 	@GetMapping("/Home")
 	public String GetAll(Model model) {
 		
-		model.addAttribute("games", repository.findAll());
+		return service.GetAll(model);
 		
-		return "HomePage";
+	}
+	
+	@GetMapping("/Disponiveis")
+	public String GetAvaible(Model model) {
+		
+		return service.GetAvaibleGames(model);
+		
+	}
+	
+	@GetMapping("/Formulario/Novo")
+	public String Post() {
+		
+		return "newPage";
 		
 	}
 	
 	@GetMapping("delete/{id}")
-	public String DeleteGame(@PathVariable("id") long id, Model model) {
+	public String Delete(@PathVariable("id") long id, Model model) {
 		
-		Game game = repository.findById(id)
-				.orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
-		
-		repository.delete(game);
-		
-		model.addAttribute("games", repository.findAll());
-		
-		return "HomePage";
+		return service.Delete(id, model);
 		
 	}
 	

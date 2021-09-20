@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+	<body style="background-color: #121212;">
+
+		<header style="background-color: #563d7c;">
+		
+			<nav class="navbar navbar-expand d-flex justify-content-center mb-3">
+				
+				<div class="navbar-nav" style="width: 18rem;">
+					
+					<a class="nav-item nav-link text-secondary" href="http://localhost:8080/Jogos/Home">Todos</a>
+					<a class="nav-item nav-link text-secondary" href="http://localhost:8080/Jogos/Disponiveis">Disponiveis</a>
+					<a class="nav-item nav-link text-white" href="http://localhost:8080/Jogos/Formulario/Novo">Novo</a>
+					
+				</div>
+				
+			</nav>
+		
+		</header>
+
+		<div class="container">
+			
+			<div class="card" style="background-color: #282828;">
+				
+				<div class="card-body border-0">
+					
+					<form>
+						
+						<div class="mb-3">
+							
+							<label for="exampleInputEmail1" class="form-label text-white mb-3">Nome do jogo</label>
+							<input class="form-control text-white border-0 " name="titulo" placeholder="Insira o nome do jogo" style="background-color: #000000">
+							
+						</div>
+					
+						<div class="mb-3">
+						
+							<label for="exampleInputPassword1" class="form-label text-white mb-3">Descrição</label>
+							<input class="form-control text-white border-0 " name="descricao" placeholder="Insira a descrição do jogo" style="background-color: #000000">
+					
+						</div>
+			
+						<div class="mb-3">
+						
+							<label for="exampleInputPassword1" class="form-label text-white mb-3">Preço</label>
+							<input class="form-control text-white border-0 " name="preco" placeholder="Insira o preço do jogo" style="background-color: #000000">
+
+						</div>
+
+						<div class="mb-3">
+						
+							<label for="exampleInputPassword1" class="form-label text-white mb-3">Quantidade em estoque</label>
+							<input class="form-control text-white border-0 " name="quantidadeEstoque" placeholder="Insira a quantidade de unidades que temos desse jogo " style="background-color: #000000">
+						
+						</div>
+
+						<button type="submit" class="text-white btn btn-outline-warning btn-lg">Cadastrar</button>
+					
+					</form>
+
+				</div>
+				
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
