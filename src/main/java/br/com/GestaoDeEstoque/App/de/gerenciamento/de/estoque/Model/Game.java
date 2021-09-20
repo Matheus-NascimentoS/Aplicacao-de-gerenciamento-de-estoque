@@ -18,7 +18,7 @@ public class Game {
 	
 	public Game() {}
 
-	public Game(Long id, String titulo, String descricao, int quantidadeEstoque, double preco) {
+	public Game(String titulo, String descricao, int quantidadeEstoque, double preco) {
 		
 		this.titulo = titulo;
 		this.descricao = descricao;
