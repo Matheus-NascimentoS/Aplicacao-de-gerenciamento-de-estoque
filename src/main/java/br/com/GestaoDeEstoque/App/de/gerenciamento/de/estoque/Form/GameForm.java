@@ -65,7 +65,7 @@ public class GameForm {
 		this.preco = preco;
 	
 	}
-	
+
 	public Game Convert() {
 		
 		Game game = new Game(titulo, descricao, quantidadeEstoque, preco);
