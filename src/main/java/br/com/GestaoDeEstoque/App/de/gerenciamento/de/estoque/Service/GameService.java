@@ -45,7 +45,7 @@ public class GameService {
 		
 		model.addAttribute("games", repository.findAll());
 		
-		return "Paginas/Home";
+		return "Paginas/Delete";
 		
 	}
 
