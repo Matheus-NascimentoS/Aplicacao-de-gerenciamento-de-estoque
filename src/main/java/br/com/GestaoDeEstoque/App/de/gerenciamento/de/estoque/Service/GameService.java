@@ -25,14 +25,14 @@ public class GameService {
 		
 		model.addAttribute("games", repository.findAll());
 		
-		return "Home";
+		return "Paginas/Home";
 		
 	}
 	
 	public String GetAvaibleGames(Model model) {
 		
 		model.addAttribute("games", repository.findByQuantidadeEstoqueGreaterThan(0));
-		return "Disponiveis";
+		return "Paginas/Disponiveis";
 		
 	}
 
@@ -45,13 +45,13 @@ public class GameService {
 		
 		model.addAttribute("games", repository.findAll());
 		
-		return "Home";
+		return "Paginas/Home";
 		
 	}
 
 	public String NewGameForm() {
 		
-		return "NewGame";
+		return "Formularios/NewGame";
 
 	}
 
@@ -63,7 +63,7 @@ public class GameService {
 		
 		model.addAttribute("games", game);
 		
-		return "ViewGame";
+		return "Paginas/ViewGame";
 		
 	}
 
@@ -72,7 +72,7 @@ public class GameService {
 		Game game = repository.findById(id)
 				.orElseThrow(() -> new IllegalArgumentException("Jogo invalido" + id));
 		model.addAttribute("games", game);
-		return "UpdateGame";
+		return "Formularios/UpdateGame";
 		
 	}
 
@@ -84,7 +84,7 @@ public class GameService {
 		
 		model.addAttribute("games", game);
 		
-		return "ViewGame";
+		return "Paginas/ViewGame";
 		
 	}
 	
