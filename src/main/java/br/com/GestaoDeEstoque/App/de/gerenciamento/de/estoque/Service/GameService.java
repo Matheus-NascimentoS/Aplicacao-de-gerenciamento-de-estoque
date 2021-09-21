@@ -63,7 +63,7 @@ public class GameService {
 		
 		model.addAttribute("games", game);
 		
-		return "ViewNewGame";
+		return "ViewGame";
 		
 	}
 
@@ -84,7 +84,7 @@ public class GameService {
 		
 		model.addAttribute("games", game);
 		
-		return "ViewNewGame";
+		return "ViewGame";
 		
 	}
 	
