@@ -9,7 +9,7 @@ O Front-End foi feito em HTML com Bootstrap, o Back-End foi feito em Java com  
 
 
 ### Pagina de início.
-![scrennshot](https://github.com/Matheus-NascimentoS/Aplicacao-de-gerenciamento-de-estoque/blob/master/ImgGit/Home.png)
+![scrennshot](https://github.com/Matheus-NascimentoS/Aplicacao-de-gerenciamento-de-estoque/blob/master/ImgGit/HomePage.png)
 
 ### Pagina de cadastro de novo jogo.
 ![scrennshot](https://github.com/Matheus-NascimentoS/Aplicacao-de-gerenciamento-de-estoque/blob/master/ImgGit/new.png)
