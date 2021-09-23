@@ -5,7 +5,7 @@ Este repositório guarda uma aplicação de gerenciamento de estoque de uma loja
 O Front-End foi feito em HTML com Bootstrap, o Back-End foi feito em Java com  Spring Boot e o banco de dados usado nesta aplicação foi o MariaDB.
 
 
-
+<h2>Imagens da aplicacao</h2>
 
 
 
